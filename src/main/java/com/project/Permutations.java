@@ -12,7 +12,7 @@ public class Permutations {
 
     }
 
-    static ArrayList<String> permutationsList(String string) {
+    public static ArrayList<String> permutationsList(String string) {
 
         generatePermutations(string, "");
         ArrayList<String> permutationsArrayList = new ArrayList<>(permutationList);
@@ -22,7 +22,7 @@ public class Permutations {
 
     }
 
-    static ArrayList<String> permutationsListUnique(String string) {
+    public static ArrayList<String> permutationsListUnique(String string) {
 
         generatePermutations(string, "");
         HashSet<String> permutationsHashSet = new HashSet<>(permutationList);
