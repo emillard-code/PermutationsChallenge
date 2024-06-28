@@ -11,10 +11,19 @@ public class MainTest {
     public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
     @Test
-    public void testApp() {
+    public void testMain() {
 
-        System.out.println("Hello Baeldung Readers!!");
-        Assert.assertEquals("Hello Baeldung Readers!!", systemOutRule.getLog().trim());
+        Assert.assertTrue(true);
+
+    }
+
+    @Test
+    public void testPrint() {
+
+        Main.print("Car");
+
+        Assert.assertEquals("Car", systemOutRule.getLog().trim());
+
     }
 
 }

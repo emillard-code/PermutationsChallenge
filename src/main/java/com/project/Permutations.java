@@ -7,6 +7,7 @@ public class Permutations {
 
     private static final ArrayList<String> permutationList = new ArrayList<>();
 
+    // This class is not meant to be instantiated.
     private Permutations() {
 
     }
@@ -21,7 +22,7 @@ public class Permutations {
 
     }
 
-    static ArrayList<String> printPermutationsUnique(String string) {
+    static ArrayList<String> permutationsListUnique(String string) {
 
         generatePermutations(string, "");
         HashSet<String> permutationsHashSet = new HashSet<>(permutationList);
