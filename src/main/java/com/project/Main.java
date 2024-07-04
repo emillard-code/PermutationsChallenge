@@ -4,7 +4,8 @@ public class Main {
 
     public static void main( String[] args ) {
 
-        Permutations.printPermutations("test");
+        System.out.println(Permutations.printPermutations("test"));
+        System.out.println(Permutations.printPermutationsUnique("test"));
 
     }
 
