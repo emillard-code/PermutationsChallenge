@@ -11,44 +11,46 @@ public class Permutations {
 
     }
 
-    static ArrayList<String> printPermutations(String string) {
+    static ArrayList<String> permutationsList(String string) {
 
         generatePermutations(string, "");
-        ArrayList<String> returnPermutationList = new ArrayList<>(permutationList);
+        ArrayList<String> permutationsArrayList = new ArrayList<>(permutationList);
         permutationList.clear();
-        return returnPermutationList;
+
+        return permutationsArrayList;
 
     }
 
     static ArrayList<String> printPermutationsUnique(String string) {
 
         generatePermutations(string, "");
-        HashSet<String> uniquePermutationList = new HashSet<>(permutationList);
-        ArrayList<String> uniquePermutationListString = new ArrayList<>(uniquePermutationList);
+        HashSet<String> permutationsHashSet = new HashSet<>(permutationList);
+        ArrayList<String> permutationsArrayListUnique = new ArrayList<>(permutationsHashSet);
         permutationList.clear();
-        return uniquePermutationListString;
+
+        return permutationsArrayListUnique;
 
     }
 
     private static void generatePermutations(String string, String permutation) {
 
-        if (string.length() == 0) {
+        if (string.isEmpty()) {
+
             permutationList.add(permutation);
+
             return;
+
         }
 
-        int permutationLength = string.length();
+        for (int i = 0; i < string.length(); i++) {
 
-        for (int i = 0; i < permutationLength; i++) {
+            char permutationCharacter = string.charAt(i);
 
-            char permutationLetter = string.charAt(i);
-
-            String remainder = string.substring(0, i) + string.substring(i + 1);
-            generatePermutations(remainder, permutation + permutationLetter);
+            String leftoverCharacters = string.substring(0, i) + string.substring(i + 1);
+            generatePermutations(leftoverCharacters, permutation + permutationCharacter);
 
         }
 
     }
-
 
 }
